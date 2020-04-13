@@ -1,4 +1,5 @@
 const covid19ImpactEstimator = (data) => {
+  const input = data;
   const estimator = {
     data: {
       region: {
@@ -9,7 +10,7 @@ const covid19ImpactEstimator = (data) => {
       },
       periodType: 'days',
       timeToElapse: 38,
-      reportedCases: 2747,
+      reportedCases: input,
       population: 92931687,
       totalHospitalsBeds: 678874
     },
@@ -56,5 +57,7 @@ const covid19ImpactEstimator = (data) => {
   currentlyInfectedEstimate();
   infectionsByRequestedTimeSevere();
 };
+
+covid19ImpactEstimator(2747);
 
 export default covid19ImpactEstimator;
