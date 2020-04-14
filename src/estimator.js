@@ -28,8 +28,8 @@ const covid19ImpactEstimator = (data) => {
   impact.currentlyInfected = reportedCases * 10;
   severeImpact.currentlyInfected = reportedCases * 50;
 
-  impact.infectionsByRequestedTime = impact.currentlyInfected * factorResult;
-  severeImpact.infectionsByRequestedTime = severeImpact.currentlyInfected * factorResult;
+  impact.infectionsByRequestedTime = Math.trunc(impact.currentlyInfected * factorResult);
+  severeImpact.infectionsByRequestedTime = Math.trunc(severeImpact.currentlyInfected * factorResult);
 
   impact.severeCasesByRequestedTime = impact.infectionsByRequestedTime * 0.15;
   severeImpact.severeCasesByRequestedTime = severeImpact.infectionsByRequestedTime * 0.15;
@@ -52,5 +52,4 @@ const covid19ImpactEstimator = (data) => {
   return { data, impact, severeImpact };
 };
 
-
-export default covid19ImpactEstimator;
+//export default covid19ImpactEstimator;
