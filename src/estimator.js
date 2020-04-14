@@ -11,10 +11,12 @@ const covid19ImpactEstimator = (data) => {
   let period;
   if (periodType === 'months') {
     period = timeToElaspe * 30;
-  } else if (periodType === 'weeks') {
+  }
+  if (periodType === 'weeks') {
     period = timeToElaspe * 7;
-  } else {
-    period = timeToElaspe;
+  }
+  if (periodType === 'days') {
+    period = timeToElaspe * 1;
   }
 
   const factor = Math.trunc(period / 3);
@@ -49,5 +51,6 @@ const covid19ImpactEstimator = (data) => {
   Math.round(severeImpact.dollarsInFlight).toFixed(2);
   return { data, impact, severeImpact };
 };
-module.exports = covid19ImpactEstimator;
-// export default covid19ImpactEstimator;
+
+
+export default covid19ImpactEstimator;
