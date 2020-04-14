@@ -17,7 +17,7 @@ const covid19ImpactEstimator = (data) => {
   } else if (periodType === 'weeks') {
     period = timeToElaspe * 7;
   } else {
-    period = periodType;
+    period = timeToElaspe;
   }
 
   const factor = Math.trunc(period / 3);
