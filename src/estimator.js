@@ -3,20 +3,20 @@ const covid19ImpactEstimator = (data) => {
   const { avgDailyIncomeUSD, avgDailyIncomePopulation } = data.region;
   const {
     periodType,
-    timeToElaspe,
+    timeToElapse,
     reportedCases,
     totalHospitalBeds
   } = data;
 
   let period;
   if (periodType === 'months') {
-    period = timeToElaspe * 30;
+    period = timeToElapse * 30;
   }
   if (periodType === 'weeks') {
-    period = timeToElaspe * 7;
+    period = timeToElapse * 7;
   }
   if (periodType === 'days') {
-    period = timeToElaspe * 1;
+    period = timeToElapse * 1;
   }
 
   const factor = Math.trunc(period / 3);
