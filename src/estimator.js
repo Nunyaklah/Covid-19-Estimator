@@ -50,5 +50,7 @@ const covid19ImpactEstimator = (data) => {
   return { data, impact, severeImpact };
 };
 
+// done
+
 
 export default covid19ImpactEstimator;
