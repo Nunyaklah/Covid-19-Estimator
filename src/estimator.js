@@ -49,4 +49,5 @@ const covid19ImpactEstimator = (data) => {
   Math.round(severeImpact.dollarsInFlight).toFixed(2);
   return { data, impact, severeImpact };
 };
-export default covid19ImpactEstimator;
+module.exports = covid19ImpactEstimator;
+// export default covid19ImpactEstimator;
