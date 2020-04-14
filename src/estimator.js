@@ -8,9 +8,6 @@ const covid19ImpactEstimator = (data) => {
     totalHospitalBeds
   } = data.region;
 
-  const impact = {};
-  const severeImpact = {};
-
   let period;
   if (periodType === 'months') {
     period = timeToElaspe * 30;
@@ -22,6 +19,9 @@ const covid19ImpactEstimator = (data) => {
 
   const factor = Math.trunc(period / 3);
   const factorResult = 2 ** factor;
+
+  const impact = {};
+  const severeImpact = {};
 
   impact.currentlyInfected = reportedCases * 10;
   severeImpact.currentlyInfected = reportedCases * 50;
