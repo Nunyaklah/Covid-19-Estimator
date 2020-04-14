@@ -47,8 +47,8 @@ const covid19ImpactEstimator = (data) => {
   impact.dollarsInFlight = impact.infectionsByRequestedTime * avgDailyIncomePopulation * avgDailyIncomeUSD * period;
   severeImpact.dollarsInFlight = severeImpact.infectionsByRequestedTime * avgDailyIncomePopulation * avgDailyIncomeUSD * period;
 
-  Math.round(impact.dollarsInFlight).toFixed(2);
-  Math.round(severeImpact.dollarsInFlight).toFixed(2);
+  // Math.round(impact.dollarsInFlight).toFixed(2);
+  // Math.round(severeImpact.dollarsInFlight).toFixed(2);
   return { data, impact, severeImpact };
 };
 
