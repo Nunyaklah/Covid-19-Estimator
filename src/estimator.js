@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 const covid19ImpactEstimator = (data) => {
-  const { avgDailyIncomeUSD, avgDailyIncomePopulation } = data.region;
+  const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = data.region;
   const {
     periodType,
     timeToElapse,
@@ -44,11 +44,9 @@ const covid19ImpactEstimator = (data) => {
   impact.casesForVentilatorsByRequestedTime = Math.trunc(impact.infectionsByRequestedTime * 0.02);
   severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(severeImpact.infectionsByRequestedTime * 0.02);
 
-  impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * avgDailyIncomePopulation * avgDailyIncomeUSD) / period);
-  severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * avgDailyIncomePopulation * avgDailyIncomeUSD) / period);
+  impact.dollarsInFlight = Math.trunc((impact.infectionsByRequestedTime * avgDailyIncomePopulation * avgDailyIncomeInUSD) / period);
+  severeImpact.dollarsInFlight = Math.trunc((severeImpact.infectionsByRequestedTime * avgDailyIncomePopulation * avgDailyIncomeInUSD) / period);
 
-  // Math.round(impact.dollarsInFlight).toFixed(2);
-  // Math.round(severeImpact.dollarsInFlight).toFixed(2);
   return { data, impact, severeImpact };
 };
 
